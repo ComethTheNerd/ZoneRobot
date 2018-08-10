@@ -1,0 +1,25 @@
+{
+  "name": "zone",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Unattended Test",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "tsc && webpack"
+  },
+  "author": "Darius Hodaei - Quantum Commune 2018",
+  "license": "SEE LICENSE IN LICENSE.TXT",
+  "dependencies": {
+    "finalhandler": "^1.1.1",
+    "serve-static": "^1.13.2"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.5",
+    "@types/webpack": "^4.4.8",
+    "awesome-typescript-loader": "^5.2.0",
+    "typescript": "^2.7.0",
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0"
+  }
+}
