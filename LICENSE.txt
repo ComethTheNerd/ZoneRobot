@@ -1,0 +1,5 @@
+Copyright (c) 2018-present, Quantum Commune Ltd. All rights reserved.
+
+Produced for Zone Test by Quantum Commune Ltd - August 2018
+
+Not for redistribution, reuse or modification wholly or in part, under any terms.

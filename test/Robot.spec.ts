@@ -23,10 +23,14 @@ describe("Robot", () => {
     expect(robot.isPlaced()).toBe(false);
 
     expect(robot.move()).toBe(false);
+    expect(robot.left()).toBe(false);
+    expect(robot.right()).toBe(false);
 
-    expect(robot.place(0, 0, Facing.South)).toBe(true);
+    expect(robot.place(0, 0, Facing.North)).toBe(true);
 
     expect(robot.move()).toBe(true);
+    expect(robot.left()).toBe(true);
+    expect(robot.right()).toBe(true);
 
     expect(robot.isPlaced()).toBe(true);
 
@@ -38,11 +42,11 @@ describe("Robot", () => {
 
     expect(robot.move()).toBe(false);
 
-    robot.place(0, 0, Facing.North);
+    robot.place(0, 0, Facing.South);
 
     expect(robot.move()).toBe(false);
 
-    robot.place(0, RowCount - 1, Facing.South);
+    robot.place(0, RowCount - 1, Facing.North);
 
     expect(robot.move()).toBe(false);
 
@@ -60,7 +64,7 @@ describe("Robot", () => {
     var pos = robot.report();
 
     expect(pos.x).toEqual(0);
-    expect(pos.y).toEqual(0);
+    expect(pos.y).toEqual(1);
     expect(pos.facing).toEqual(Facing.North);
 
     robot.place(0, 0, Facing.North);
@@ -86,7 +90,7 @@ describe("Robot", () => {
     pos = robot.report();
 
     expect(pos.x).toEqual(3);
-    expect(pos.y).toEqual(1);
+    expect(pos.y).toEqual(3);
     expect(pos.facing).toEqual(Facing.North);
 
   });

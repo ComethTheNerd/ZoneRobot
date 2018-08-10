@@ -127,7 +127,7 @@ function updateGrid(container : HTMLElement, grid : IGrid, robot : IRobot)
 
     var robotPosition = robot.report();
     
-    for(var y = 0; y < grid.rowCount; ++y)
+    for(var y = grid.rowCount - 1; y >= 0; --y)
     {
         var row = document.createElement('div');
 

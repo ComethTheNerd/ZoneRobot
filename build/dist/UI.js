@@ -81,7 +81,7 @@ function updateGrid(container, grid, robot) {
     container.innerHTML = '';
     container.classList.add('grid');
     var robotPosition = robot.report();
-    for (var y = 0; y < grid.rowCount; ++y) {
+    for (var y = grid.rowCount - 1; y >= 0; --y) {
         var row = document.createElement('div');
         row.classList.add('row');
         for (var x = 0; x < grid.columnCount; ++x) {

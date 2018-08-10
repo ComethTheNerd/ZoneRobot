@@ -34,11 +34,11 @@ class Robot {
         if (this.isPlaced()) {
             switch (this.facing) {
                 case Facing.North:
-                    return this.place(this.x, this.y - 1, this.facing);
+                    return this.place(this.x, this.y + 1, this.facing);
                 case Facing.East:
                     return this.place(this.x + 1, this.y, this.facing);
                 case Facing.South:
-                    return this.place(this.x, this.y + 1, this.facing);
+                    return this.place(this.x, this.y - 1, this.facing);
                 case Facing.West:
                     return this.place(this.x - 1, this.y, this.facing);
                 default:

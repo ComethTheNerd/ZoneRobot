@@ -8,7 +8,7 @@ var serve = serveStatic("./public");
 var server = http.createServer(function (req, res) {
     var done = finalhandler(req, res);
 
-    var redirect = /^\/(scripts|lib|styles)/.test(req.url) === false;
+    var redirect = /^\/(scripts|styles)/.test(req.url) === false;
 
     if (redirect) 
     {
