@@ -1,162 +1,108 @@
-import { IGrid } from './Grid';
-
-export enum Facing
-{
-    North = "NORTH",
-    South = "SOUTH",
-    East = "EAST",
-    West = "WEST"
-}
-
-export interface IRobot // @TODO Will Smith joke
-{
-    isPlaced() : boolean;
-    place(x : number, y : number, facing : Facing) : boolean;
-    move() : boolean;
-    left() : boolean;
-    right() : boolean;
-    report() : { x : number, y : number, facing : Facing }
-}
-
-export class Robot implements IRobot
-{
-    private facing : Facing;
-    private x : number;
-    private y : number;
-
-    constructor(private grid : IGrid)
-    {
-        this.x = - 1;
-        this.y = - 1;
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Facing;
+(function (Facing) {
+    Facing["North"] = "NORTH";
+    Facing["South"] = "SOUTH";
+    Facing["East"] = "EAST";
+    Facing["West"] = "WEST";
+})(Facing = exports.Facing || (exports.Facing = {}));
+class Robot {
+    constructor(grid) {
+        this.grid = grid;
+        this.x = -1;
+        this.y = -1;
         // setting this to a default in case .report() is called before the robot
         // is placed for the first time
         this.facing = Facing.South;
     }
-
-    isPlaced()
-    {
+    isPlaced() {
         return this.grid.isWithinBounds(this.x, this.y);
     }
-
-    place(x : number, y : number, facing : Facing) : boolean
-    {
-        if(this.grid.isWithinBounds(x, y))
-        {
+    place(x, y, facing) {
+        if (this.grid.isWithinBounds(x, y)) {
             this.x = x;
             this.y = y;
             this.facing = facing;
-            
             return true;
         }
-        else
-        {
+        else {
             return false;
         }
     }
-
-    move() : boolean
-    {
-        if(this.isPlaced())
-        {
-            switch(this.facing)
-            {
+    move() {
+        if (this.isPlaced()) {
+            switch (this.facing) {
                 case Facing.North:
                     return this.place(this.x, this.y - 1, this.facing);
-
                 case Facing.East:
                     return this.place(this.x + 1, this.y, this.facing);
-
                 case Facing.South:
                     return this.place(this.x, this.y + 1, this.facing);
-
                 case Facing.West:
                     return this.place(this.x - 1, this.y, this.facing);
-
                 default:
                     // invalid
                     return false;
             }
         }
-        else
-        {
+        else {
             return false;
         }
     }
-
-    left() : boolean
-    {
-        if(this.isPlaced())
-        {
-            switch(this.facing)
-            {
+    left() {
+        if (this.isPlaced()) {
+            switch (this.facing) {
                 case Facing.North:
                     this.facing = Facing.West;
-                break;
-
+                    break;
                 case Facing.East:
                     this.facing = Facing.North;
-                break;
-
+                    break;
                 case Facing.South:
                     this.facing = Facing.East;
-                break;
-
+                    break;
                 case Facing.West:
                     this.facing = Facing.South;
-                break;
-
+                    break;
                 default:
                     // invalid
                     return false;
-
             }
-
             return true;
         }
-        else
-        {
+        else {
             return false;
         }
     }
-    
-    right() : boolean
-    {
-        if(this.isPlaced())
-        {
-            switch(this.facing)
-            {
+    right() {
+        if (this.isPlaced()) {
+            switch (this.facing) {
                 case Facing.North:
                     this.facing = Facing.East;
-                break;
-
+                    break;
                 case Facing.East:
                     this.facing = Facing.South;
-                break;
-
+                    break;
                 case Facing.South:
                     this.facing = Facing.West;
-                break;
-
+                    break;
                 case Facing.West:
                     this.facing = Facing.North;
-                break;
-
+                    break;
                 default:
                     // invalid
                     return false;
             }
-
             return true;
         }
-        else
-        {
+        else {
             return false;
         }
     }
-
-    report() : { x : number, y : number, facing : Facing }
-    {
-        return { x : this.x, y : this.y, facing : this.facing };
+    report() {
+        return { x: this.x, y: this.y, facing: this.facing };
     }
 }
+exports.Robot = Robot;
+//# sourceMappingURL=Robot.js.map

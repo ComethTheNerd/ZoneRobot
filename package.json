@@ -15,8 +15,6 @@
     "serve-static": "^1.13.2"
   },
   "devDependencies": {
-    "@types/node": "^7.0.5",
-    "@types/webpack": "^4.4.8",
     "awesome-typescript-loader": "^5.2.0",
     "typescript": "^2.7.0",
     "webpack": "^4.16.2",
