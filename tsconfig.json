@@ -19,7 +19,6 @@
     "build",
     "test",
     "server.js",
-    "setUpTests.ts",
     "webpack.config.js"
   ],
   "types": [
