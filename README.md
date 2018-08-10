@@ -17,4 +17,4 @@
 ## Notes
 
 - Used TypeScript as I believe the static type validation enables one to maintain quality as the codebase scales. It also makes refactoring much easier over time.
-- Did not use a UI framework because using tools like React and Redux would have been over engineering given the current ask, especially given the boilerplate required for them.
+- Did not use a UI framework because using tools like React and Redux would have been over engineering given the current ask, especially the boilerplate required for them.
