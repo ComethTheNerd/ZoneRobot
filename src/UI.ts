@@ -160,11 +160,11 @@ function updateGrid(container : HTMLElement, grid : IGrid, robot : IRobot)
             }
             else if((x % 2) === (y % 2))
             {
-                square.classList.add('black');
+                square.classList.add('pattern-1');
             }
             else
             {
-                square.classList.add('white');
+                square.classList.add('pattern-2');
             }
 
             row.appendChild(square);

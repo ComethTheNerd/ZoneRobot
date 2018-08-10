@@ -102,12 +102,12 @@ h1
     background:yellow;
 }
 
-.black
+.square.pattern-1
 {
     background:#031a9c;
 }
 
-.white
+.square.pattern-2
 {
     background:#95a5ff;
 }
